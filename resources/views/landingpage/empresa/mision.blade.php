@@ -8,23 +8,23 @@
     <!--====== Title ======-->
     <title>Recuerda.me | Misión y Visión</title>
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('resources/logo/favicon.png')}}" type="image/png">
     <!--====== Bootstrap css ======-->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('resources/landing-assets/css/bootstrap.min.css')}}">
     <!--====== Fontawesome css ======-->
-    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('resources/landing-assets/css/font-awesome.min.css')}}">
     <!--====== Line Icons css ======-->
-    <link rel="stylesheet" href="../assets/css/LineIcons.css">
+    <link rel="stylesheet" href="{{asset('resources/landing-assets/css/LineIcons.css')}}">
     <!--====== Animate css ======-->
-    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="{{asset('resources/landing-assets/css/animate.css')}}">
     <!--====== Aos css ======-->
-    <link rel="stylesheet" href="../assets/css/aos.css">
+    <link rel="stylesheet" href="{{asset('resources/landing-assets/css/aos.css')}}">
     <!--====== Slick css ======-->
-    <link rel="stylesheet" href="../assets/css/slick.css">
+    <link rel="stylesheet" href="{{asset('resources/landing-assets/css/slick.css')}}">
     <!--====== Default css ======-->
-    <link rel="stylesheet" href="../assets/css/default.css">
+    <link rel="stylesheet" href="{{asset('resources/landing-assets/css/default.css')}}">
     <!--====== Style css ======-->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('resources/landing-assets/css/style.css')}}">
 </head>
 
 <body>
@@ -35,9 +35,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand mr-5" href="../index.html">
-                                <img src="../assets/images/logo.png" alt="Logo">
-                            </a>
+                        <a class="navbar-brand" href="{{ route('home')}}">
+                            <img src="{{ asset('resources/logo/recuerdame-logo.png')}}" alt="Logo">
+                        </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -56,10 +56,10 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="page-scroll" href="../index.html">Inicio</a>
+                                        <a class="page-scroll" href="{{ route('home')}}">Inicio</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="../servicio/servicios.html">Servicios</a>
+                                        <a class="page-scroll" href="{{ route('servicios')}}">Servicios</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="page-scroll dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -67,15 +67,15 @@
                                             Conócenos
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="../empresa/quiensomos.html">¿Quiénes somos?</a>
-                                            <a class="dropdown-item" href="mision.html">Misión y visión </a>
+                                            <a class="dropdown-item" href="{{ route('nosotros')}}">¿Quiénes somos?</a>
+                                            <a class="dropdown-item" href="{{ route('misión')}}">Misión y visión </a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="../servicio/contacto.html">Contacto</a>
+                                        <a class="page-scroll" href="{{ route('contacto')}}">Contacto</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll login" href="../login/login.html"><i class="lni lni-user"></i></a>
+                                        <a class="page-scroll login" href="{{ route('login') }}"><i class="lni lni-user"></i></a>
                                     </li>
                                 </ul> <!-- navbar nav -->
                             </div>
@@ -90,9 +90,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="../index.html">
-                                <img src="../assets/images/logo.png" alt="Logo">
-                            </a>
+                        <a class="navbar-brand" href="{{ route('home')}}">
+                            <img src="{{ asset('resources/logo/recuerdame-logo.png')}}" alt="Logo">
+                        </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -109,27 +109,27 @@
                                 </div>
                             </div>
                             <!-- Search bar ENDS -->
-                                <ul id="nav" class="navbar-nav ml-auto">
-                                    <li class="nav-item active">
-                                        <a class="page-scroll" href="../index.html">Inicio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="../servicio/servicios.html">Servicios</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="../empresa/quiensomos.html">¿Quiénes somos?</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="../empresa/mision.html">Misión y visión </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="../servicio/contacto.html">Contacto</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll login" href="../login/login.html"><i class="lni lni-user"></i> Iniciar
-                                            sesión</a>
-                                    </li>
-                                </ul> <!-- navbar nav -->
+                            <ul id="nav" class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="page-scroll" href="{{ route('home')}}">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="{{ route('servicios')}}">Servicios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="{{ route('nosotros')}}">¿Quiénes somos?</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="{{ route('misión')}}">Misión y visión </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="{{ route('contacto')}}">Contacto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll login" href="{{ route('login')}}"><i class="lni lni-user"></i> Iniciar sesión</a>
+                                </li>
+                            </ul>
+                             <!-- navbar nav -->
                             </div>
                             <!-- <div class="navbar-btn ml-20 d-none d-sm-block">
                                     <a class="main-btn" href="login.html"><i class="lni lni-user"></i> Iniciar sesión</a>
@@ -147,13 +147,14 @@
                 <div class="col-lg-6">
                     <div class="about-image mt-50 clearfix">
                         <div class="single-image float-left">
-                            <img src="../assets/images/banner/shape/banner 1.png" alt="About">
+                            <img src="../images/banner/shape/banner 1.png" alt="About">
+                           
                         </div> <!-- single image -->
                         <div data-aos="fade-right" class="about-btn ">
-                            <a class="main-btn cursor-normal" href="../servicio/servicios.html"><span>QR</span> una experiencia unica</a>
+                            <a class="main-btn cursor-normal" href="{{ route('servicios')}}"><span>QR</span> una experiencia unica</a>
                         </div>
                         <div class="single-image image-tow float-right">
-                            <img src="../assets/images/banner/shape/banner 2.png" alt="About">
+                        <img src="../images/banner/shape/banner 2.png" alt="About">
                         </div> <!-- single image -->
                     </div> <!-- about image -->
                 </div>
@@ -177,9 +178,9 @@
             <div class="row">
                 <div class="col-lg-4 col-md-5 col-sm-8">
                     <div class="footer-logo mt-20">
-                        <a href="../index.html">
-                            <img src="../assets/images/logo.png" alt="Logo">
-                        </a>
+                        <a href="{{ route('home')}}">
+                                <img src="{{ asset('resources/logo/recuerdame-logo.png')}}" alt="Logo">
+                            </a>
                         <ul class="footer-info">
                             <li>
                                 <div class="single-info">
@@ -219,9 +220,9 @@
                             <h4 class="title">Contacto</h4>
                         </div>
                         <ul class="mt-15">
-                            <li><a href="../index.html">Inicio</a></li>
-                            <li><a href="../servicio/servicios.html">Servicios</a></li>
-                            <li><a href="../empresa/quiensomos.html">¿Quiénes somos?</a></li>
+                                <li><a href="{{ route('home')}}">Inicio</a></li>
+                                <li><a href="{{ route('servicios')}}">Servicios</a></li>
+                                <li><a href="{{ route('nosotros')}}">¿Quiénes somos?</a></li>
                         </ul>
                     </div>
                 </div>
@@ -231,9 +232,9 @@
                             <h4 class="title">Acerca de la empresa</h4>
                         </div>
                         <ul class="mt-15">
-                            <li><a href="../empresa/mision.html">Misión</a></li>
-                            <li><a href="../empresa/mision.html">Visión</a></li>
-                            <li><a href="../servicio/contacto.html">Contacto</a></li>
+                                <li><a href="{{ route('misión')}}">Misión</a></li>
+                                <li><a href="{{ route('misión')}}">Visión</a></li>
+                                <li><a href="{{ route('contacto')}}">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
@@ -276,19 +277,19 @@
             alterClass();
         });
     </script>
-    <!--====== Bootstrap js ======-->
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <!--====== WOW js ======-->
-    <script src="../assets/js/wow.min.js"></script>
-    <!--====== Slick js ======-->
-    <script src="../assets/js/slick.min.js"></script>
-    <!--====== Scrolling Nav js ======-->
-    <script src="../assets/js/scrolling-nav.js"></script>
-    <script src="../assets/js/jquery.easing.min.js"></script>
-    <!--====== Aos js ======-->
-    <script src="assets/js/aos.js"></script>
+   <!---====== Bootstrap js ======-->
+   <script src="{{ asset('resources/landing-assets/js/bootstrap.min.js')}}"></script>
+    <!---====== WOW js ======-->
+    <script src="{{ asset('resources/landing-assets/js/wow.min.js')}}"></script>
+    <!---====== Slick js ======-->
+    <script src="{{ asset('resources/landing-assets/js/slick.min.js')}}"></script>
+    <!---====== Scrolling Nav js ======-->
+    <script src="{{ asset('resources/landing-assets/js/scrolling-nav.js')}}"></script>
+    <script src="{{ asset('resources/landing-assets/js/jquery.easing.min.js')}}"></script>
+    <!---====== Aos js ======-->
+    <script src="{{ asset('resources/landing-assets/js/aos.js')}}"></script>
     <!--====== Main js ======-->
-    <script src="../assets/js/main.js"></script>
+    <script src="{{ asset('resources/landing-assets/js/main.js')}}"></script>
     <!--====== FOOTER PART ENDS ======-->
 </body>
 
