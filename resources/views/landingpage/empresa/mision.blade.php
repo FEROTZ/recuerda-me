@@ -28,9 +28,8 @@
 </head>
 
 <body>
-    <header id="home" class="header-area pt-100"> 
+    <header id="home" class="header-area pt-100">
         <div class="navigation-bar desktop">
-    
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
