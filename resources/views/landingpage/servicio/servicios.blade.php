@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/default.css')}}">
     <!--====== Style css ======-->
     <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('resources/landing-asset/css/style servicios.css')}}">
     <script src="https://kit.fontawesome.com/e65f2cf6ae.js" crossorigin="anonymous"></script>
 </head>
 
@@ -138,117 +139,133 @@
     </header>
 
     <!--====== SERVICES PART START ======-->
-    <section id="service" class="services-area pt-125 pb-130 gray-bg">
+    <div class="container-fluid pt-5">
         <div class="container">
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-6">
-                    <div class="section-title text-center pb-20">
-                        <h5 class="sub-title mb-15">Nuestros Servicios</h5>
-                        <h2 class="title">¿Qué Ofrecemos?</h2>
-                    </div> <!-- section title -->
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Nuestros Servicios</h6>
+                <h1 class="mb-4">Elige uno de nuestros paquetes </h1>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>1200
+                            </h1>
+                        </div>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Económico</h3>
+                        </div>
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>Biografia del difunto</p>
+                            <p>1 Fotografia</p>
+                            <p>Un unico codigo QR</p>
+                            <p>Pensamos en tu economia</p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Contratar Ahora</a>
+                        </div>
+                    </div>
                 </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                        <div class="services-icon">
-                            <i class="lni lni-offer"></i>
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>2000
+                            </h1>
                         </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Económico</h4>
-                            <P>$1200</P>
-                            <ul>
-                                <li>Biografía del difunto</li>
-                                <li>1 fotografía</li>
-                                <li>un único código QR</li>
-                            </ul>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Basico</h3>
                         </div>
-                    </div> <!-- single services -->
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>Biografia del difunto</p>
+                            <p>1 Fotografia</p>
+                            <p>Un unico codigo QR</p>
+                            <p>1 video de un minuto </p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Contratar Ahora</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-                        <div class="services-icon">
-                            <i class="lni lni-revenue"></i>
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>3000
+                            </h1>
                         </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Básico</h4>
-                            <p class="mt-20">$2000</p>
-                            <ul>
-                                <li>Incluye el paquete Económico</li>
-                                <li>+Un video de 1 min </li>
-                            </ul>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Medium</h3>
                         </div>
-                    </div> <!-- single services -->
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>Biografia del difunto</p>
+                            <p>1 Fotografia</p>
+                            <p>Un unico codigo QR</p>
+                            <p>1 video de 3 minutos  </p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Contrata Ahora</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
-                        <div class="services-icon">
-                            <i class="lni lni-tag"></i>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>5000
+                            </h1>
                         </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">medium</h4>
-                            <p class="mt-20">$3000</p>
-                            <ul>
-                                <li>Incluye el paquete básico</li>
-                                <li>+Un video de 3 minutos con la melodia deseada</li>
-                            </ul>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Pro</h3>
                         </div>
-                    </div> <!-- single services -->
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>Biografia del difunto</p>
+                            <p>3 Fotografias</p>
+                            <p>2 codigos QR</p>
+                            <p>Un video de 10 minutos </p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Contrata Ahora</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                        <div class="services-icon">
-                            <i class="lni-briefcase"></i>
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>10,000
+                            </h1>
                         </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Pro</h4>
-                            <p class="mt-20">$5000</p>
-                            <ul>
-                                <li>Incluye el paquete medium</li>
-                                <li>incluye hasta 2 códigos QR</li>
-                                <li>incluye 3 fotografías</li>
-                                <li>+video de 10 minutos</li>
-                            </ul>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Premium</h3>
                         </div>
-                    </div> <!-- single services -->
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>paquete personalizado</p>
+                            <p>Un video no tiene limite de tiempo</p>
+                            <p>El cliente elige el numero de secciones </p>
+                            <p>Genera hasta 5 codigos QR</p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Contrata Ahora</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-                        <div class="services-icon">
-                            <i class="lni lni-diamond"></i>
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;"></small>$$$
+                            </h1>
                         </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">plus</h4>
-                            <p class="mt-20">$10000</p>
-                            <ul>
-                                <li> Este paquete es totalmente personalizado y no posee límite de tiempo </li>
-                                <li>el cliente el que decida el número de secciones a elegir</li>
-                                <li>genera hasta 5 códigos QR</li>
-                            </ul>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Extras</h3>
                         </div>
-                    </div> <!-- single services -->
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>Generar codigo QR Extra</p>
+                            <p>Agregar minutos a tu video</p>
+                            <p>Agregar fotografias</p>
+                            <p>Agregar canciones extra</p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Contrata Ahora</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
-                        <div class="services-icon">
-                            <i class="lni lni-plus"></i>
-                        </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Extras</h4>
-                            <p class="mt-20">Puedes agregar cosas extras desde el paquete básico en caso de no quedar conforme se cobrara una pequeña comisión</p>
-                            <ul>
-                                <li>Código QR extra $500</li>
-                                <li>agregar mas tiempo al video $200</li>
-                                <li>Agregar fotografía $100</li>
-                                <li>agregar canciones extra $200</li>
-
-                            </ul>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing Plan End -->
     <!--====== SERVICES PART ENDS ======-->
 
  <!--====== FOOTER PART START ======-->
