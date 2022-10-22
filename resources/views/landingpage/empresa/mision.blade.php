@@ -146,14 +146,14 @@
                 <div class="col-lg-6">
                     <div class="about-image mt-50 clearfix">
                         <div class="single-image float-left">
-                            <img src="../images/banner/shape/banner 1.png" alt="About">
+                            <img src="{{ asset('resources/landing-assets/images/banner/shape/banner 1.png')}}" alt="About">
                            
                         </div> <!-- single image -->
                         <div data-aos="fade-right" class="about-btn ">
                             <a class="main-btn cursor-normal" href="{{ route('servicios')}}"><span>QR</span> una experiencia unica</a>
                         </div>
                         <div class="single-image image-tow float-right">
-                        <img src="../images/banner/shape/banner 2.png" alt="About">
+                        <img src="{{ asset('resources/landing-assets/images/banner/shape/banner 2.png')}}" alt="About">
                         </div> <!-- single image -->
                     </div> <!-- about image -->
                 </div>
