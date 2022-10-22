@@ -24,7 +24,7 @@
                     <!-- Search bar ENDS -->
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul id="nav" class="navbar-nav ml-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="page-scroll" href="{{ route('home') }}">Inicio</a>
                             </li>
                             <li class="nav-item">

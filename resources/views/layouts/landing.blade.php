@@ -19,12 +19,14 @@
         <link rel="stylesheet" href="{{asset('resources/landing-assets/css/animate.css')}}">
         <!--====== Aos css ======-->
         <link rel="stylesheet" href="{{asset('resources/landing-assets/css/aos.css')}}">
-        <!--====== Slick css ======-->
-        <link rel="stylesheet" href="{{asset('resources/landing-assets/css/slick.css')}}">
-        <!--====== Default css ======-->
-        <link rel="stylesheet" href="{{asset('resources/landing-assets/css/default.css')}}">
+        <!--====== Flickity css ======-->
+        <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/flickity.min.css')}}">
+        <!--====== Flickity js ======-->
+        <script src="{{ asset('resources/landing-assets/js/flickity.pkgd.min.js')}}"></script>
         <!--====== Style css ======-->
         <link rel="stylesheet" href="{{asset('resources/landing-assets/css/style.css')}}">
+        <!--====== Font awesome ======-->
+        <script src="https://kit.fontawesome.com/e65f2cf6ae.js" crossorigin="anonymous"></script>
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Styles -->
@@ -55,24 +57,18 @@
               $(window).resize(function () {
                   alterClass();
               });
-              //Fire it when the page first loads:
-              // alterClass();
           });
       </script>
 
       <!--====== Bootstrap js ======-->
       <script src="{{ asset('resources/landing-assets/js/bootstrap.min.js')}}"></script>
-
       <!--====== WOW js ======-->
       <script src="{{ asset('resources/landing-assets/js/wow.min.js')}}"></script>
-
       <!--====== Slick js ======-->
       <script src="{{ asset('resources/landing-assets/js/slick.min.js')}}"></script>
-
       <!--====== Scrolling Nav js ======-->
       <script src="{{ asset('resources/landing-assets/js/scrolling-nav.js')}}"></script>
       <script src="{{ asset('resources/landing-assets/js/jquery.easing.min.js')}}"></script>
-
       <!--====== Aos js ======-->
       <script src="{{ asset('resources/landing-assets/js/aos.js')}}"></script>
       <!--====== Main js ======-->
