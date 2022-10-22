@@ -22,14 +22,10 @@
     <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/animate.css')}}">
     <!--====== Aos css ======-->
     <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/aos.css')}}">
-    <!--====== Slick css ======-->
-    <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/slick.css')}}">
     <!--====== Flickity css ======-->
     <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/flickity.min.css')}}">
     <!--====== Flickity js ======-->
     <script src="{{ asset('resources/landing-assets/js/flickity.pkgd.min.js')}}"></script>
-    <!--====== Default css ======-->
-    <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/default.css')}}">
     <!--====== Style css ======-->
     <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/style.css')}}">
     <script src="https://kit.fontawesome.com/e65f2cf6ae.js" crossorigin="anonymous"></script>
