@@ -1509,20 +1509,13 @@ background: linear-gradient(86deg, rgba(100,45,133,0.19791666666666663) 0%, rgba
 /*===========================
     2.HEADER css
 ===========================*/
-
-.mobile.display-none {
-  display: none;
-}
-.desktop.display-none {
-  display: none;
-}
-header{
-  height: 100vh;
-  background-image: linear-gradient(to top, rgba(112, 55, 243, 0.493) 0%, rgba(241, 234, 239, 0.473) 100%), url(../img/portada.jpg);
-  background-repeat:no-repeat ;
-  background-position:center;
-  background-size:cover ;
-}
+/* header{ */
+  /* height: 100vh; */
+  /* background-image: linear-gradient(to top, rgba(112, 55, 243, 0.493) 0%, rgba(241, 234, 239, 0.473) 100%), url(../img/portada.jpg); */
+  /* background-repeat:no-repeat ; */
+  /* background-position:center; */
+  /* background-size:cover ; */
+/* } */
 
 .head {
   padding: 0;
@@ -1535,6 +1528,7 @@ header{
 }
 
 .hamburguer {
+  z-index: 100;
   position: fixed;
   top: 30px;
   right: 30px;
@@ -1548,12 +1542,13 @@ header{
 }
 
 .menu-navegacion {
+  z-index: 101;
   position: fixed;
   top: 0;
-  width: 30vw;
+  width: 23vw;
   height: 100%;
-  background-image: linear-gradient(to top, #453766 0%, #fbc2eb 100%);
-  background-image: linear-gradient(135deg, #a1afec 0%, #764ba2 100%);
+  /* background-image: linear-gradient(to top, #453766 0%, #fbc2eb 100%); */
+  /* background-image: linear-gradient(135deg, #a1afec 0%, #764ba2 100%); */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -1569,11 +1564,8 @@ header{
 }
 
 .menu-navegacion a {
-  color: #fff;
   text-decoration: none;
 }
-
-
 
 .subtitulo {
   color: #9f8ad0;
@@ -1582,10 +1574,6 @@ header{
   font-weight: 300;
   margin-bottom: 30px;
 }
-
-
-
-
 
 @media screen and (max-width: 500px) {
   .menu-navegacion {

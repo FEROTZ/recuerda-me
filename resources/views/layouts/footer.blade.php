@@ -1,4 +1,4 @@
-<footer id="footer" class="footer-area">
+<footer id="footer" class="bg-gray-200">
     <div class="footer-widget pt-50 pb-50">
         <div class="container">
             <div class="row">

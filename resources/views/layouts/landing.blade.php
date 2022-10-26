@@ -24,42 +24,33 @@
         <!--====== Flickity js ======-->
         <script src="{{ asset('resources/landing-assets/js/flickity.pkgd.min.js')}}"></script>
         <!--====== Style css ======-->
-        <link rel="stylesheet" href="{{asset('resources/landing-assets/css/style.css')}}">
         <!--====== Font awesome ======-->
         <script src="https://kit.fontawesome.com/e65f2cf6ae.js" crossorigin="anonymous"></script>
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('resources/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('resources/landing-assets/css/style.css')}}">
+        {{-- <link rel="stylesheet" href="{{ asset('resources/landing-asset/css/style servicios.css')}}"> --}}
+        {{-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> --}}
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel='stylesheet'> --}}
     </head>
     <body>
-      <header id="home" class="header-area pt-100">
-        @extends('layouts.navbar')
+      <header id="home" class="pt-30 grid grid-cols-6 gap-4">
+        <div class="search-bar col-start-2 col-span-4">
+          <div class="inputs">
+              <i class="fa fa-search"></i>
+              <x-jet-input id="search" class="block w-full indent-4 search text-zinc-900" type="text" name="search" placeholder="Realizar una búsqueda..." autofocus/>
+          </div>
+        </div>
       </header>
+      @extends('layouts.navbar')
       @yield('content')
       @extends('layouts.footer')
 
       <!---====== jquery js ======-->
       <script src="{{ asset('resources/landing-assets/js/vendor/modernizr-3.6.0.min.js')}}"></script>
       <script src="{{ asset('resources/landing-assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
-      <script>
-          jQuery(document).ready(function ($) {
-              var alterClass = function () {
-                  var ww = document.body.clientWidth;
-                  if (ww <= 991) {
-                      $('.desktop').addClass('display-none');
-                      $('.mobile').removeClass('display-none');
-                  } else if (ww > 991) {
-                      $('.desktop').removeClass('display-none');
-                      $('.mobile').addClass('display-none');
-                  };
-              };
-              $(window).resize(function () {
-                  alterClass();
-              });
-          });
-      </script>
-
       <!--====== Bootstrap js ======-->
       <script src="{{ asset('resources/landing-assets/js/bootstrap.min.js')}}"></script>
       <!--====== WOW js ======-->
@@ -73,5 +64,6 @@
       <script src="{{ asset('resources/landing-assets/js/aos.js')}}"></script>
       <!--====== Main js ======-->
       <script src="{{ asset('resources/landing-assets/js/main.js')}}"></script>
+      {{-- <script src="{{ asset('resources/landing-assets/js/menu.js')}}"></script> --}}
     </body>
 </html>
