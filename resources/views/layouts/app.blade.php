@@ -8,13 +8,13 @@
         <title>
             {{ config('app.name', 'Laravel') }}
         </title>
-
+        <!--====== Favicon Icon ======-->
+        <link rel="shortcut icon" href="{{ asset('resources/logo/favicon.png')}}" type="image/png">
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        
         <!-- Styles -->
         @livewireStyles
         <link rel="stylesheet" href="{{ asset('resources/css/style.css')}}">
