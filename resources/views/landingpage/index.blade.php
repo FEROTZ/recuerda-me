@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/default.css')}}">
     <!--====== Style css ======-->
     <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/style.css')}}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e65f2cf6ae.js" crossorigin="anonymous"></script>
 </head>
 
@@ -55,7 +57,9 @@
     </div>
     <!--====== PRELOADER ENDS START ======-->
     <!--====== HEADER PART START ======--->
-    <header id="home" class="header-area pt-100">
+    <header class="header" id="inicio">
+        <img src="icons/Hamburguesa.svg" alt=""  class="hamburguer">
+
     <!--Create bar navigation desktop-->
     <div class="navigation-bar desktop">
         <div class="container">
@@ -423,6 +427,8 @@
     <script src="{{ asset('resources/landing-assets/js/aos.js')}}"></script>
     <!--====== Main js ======-->
     <script src="{{ asset('resources/landing-assets/js/main.js')}}"></script>
+  <!--====== Menu js ======-->
+    <script src="{{ asset('resources/landing-assets/js/menu.js')}}"></script>
 
 </body>
 
