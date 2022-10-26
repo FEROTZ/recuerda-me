@@ -580,6 +580,14 @@ p {
 .desktop.display-none {
   display: none;
 }
+header{
+  height: 100vh;
+  background-image: linear-gradient(to top, rgba(112, 55, 243, 0.493) 0%, rgba(241, 234, 239, 0.473) 100%), url(../img/portada.jpg);
+  background-repeat:no-repeat ;
+  background-position:center;
+  background-size:cover ;
+}
+
 .head {
   padding: 0;
   height: 100%;
@@ -619,6 +627,50 @@ p {
   transition: transform 0.3s ease-in-out;
   box-shadow: 0 0 6px rgba(0, 0, 0, .5);
 }
+
+.spread {
+  transform: translateX(0);
+}
+
+.menu-navegacion a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+.subtitulo {
+  color: #9f8ad0;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+@media screen and (max-width: 500px) {
+  .menu-navegacion {
+      width: 65vw;
+  }
+
+  .hamburguer {
+      top: 20px;
+      right: 20px;
+  }
+
+  .titulo {
+      font-size: 30px;
+  }
+
+  .subtitulo {
+      font-size: 30px;
+  }
+
+} 
+
 
 /* Searchbar cssa */
 
