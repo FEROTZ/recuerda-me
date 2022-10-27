@@ -30,6 +30,19 @@ Route::get('/contacto', function () {
     return view('landingpage.servicio.contacto');
 })->name('contacto');
 
+Route::get('/prueba', function () {
+    return view('dashboard');
+})->name('prueba');
+
+Route::get('/planPremiun', function () {
+    return view('client.index');
+})->name('client');
+
+Route::get('/tablaProducto', function () {
+    return view('client.tablaPlanes');
+})->name('tablaPlanes');
+
+
 // Dashboard usuario
 Route::middleware([
     'auth:sanctum',
@@ -39,4 +52,13 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/planEconomico', function () {
+        return view('client.planEconomico');
+    })->name('planEconomico');
+    Route::get('/planBasico', function () {
+        return view('client.planBasico');
+    })->name('planBasico');
+    Route::get('/planPremiun', function () {
+        return view('client.planPremiun');
+    })->name('planPremiun');
 });

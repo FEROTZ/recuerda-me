@@ -23,9 +23,9 @@
                             <p>1 Fotografia</p>
                             <p>Un unico codigo QR</p>
                             <p>Pensamos en tu economia</p>
-                            <x-jet-button class="py-2 px-4 my-2 text-lg text-lg">
+                            <x-link  href="{{route('planEconomico')}}" class="py-2 px-4 my-2 text-lg text-lg">
                                 {{ __('Contratar ahora') }}
-                            </x-jet-button>
+                            </x-link >
                             {{-- <a href="" class="btn btn-primary py-2 px-4 my-2 text-lg text-lg">Contratar Ahora</a> --}}
                         </div>
                     </div>
@@ -46,9 +46,9 @@
                             <p>1 Fotografia</p>
                             <p>Un unico codigo QR</p>
                             <p>1 video de un minuto </p>
-                            <x-jet-button class="py-2 px-4 my-2 text-lg text-lg">
+                            <x-link  href="{{route('planBasico')}}" class="py-2 px-4 my-2 text-lg text-lg">
                                 {{ __('Contratar ahora') }}
-                            </x-jet-button>
+                            </x-link >
                         </div>
                     </div>
                 </div>
@@ -68,9 +68,9 @@
                             <p>1 Fotografia</p>
                             <p>Un unico codigo QR</p>
                             <p>1 video de 3 minutos </p>
-                            <x-jet-button class="py-2 px-4 my-2 text-lg text-lg">
+                            <x-link  href="{{route('planPremiun')}}" class="py-2 px-4 my-2 text-lg text-lg">
                                 {{ __('Contratar ahora') }}
-                            </x-jet-button>
+                            </x-link >
                         </div>
                     </div>
                 </div>
