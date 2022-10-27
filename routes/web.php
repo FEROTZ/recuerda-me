@@ -30,6 +30,10 @@ Route::get('/contacto', function () {
     return view('landingpage.servicio.contacto');
 })->name('contacto');
 
+Route::get('/administradores', function () {
+    return view('admin.index');
+})->name('admin.index');
+
 // Dashboard usuario
 Route::middleware([
     'auth:sanctum',
@@ -40,3 +44,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('landingpage.index');
+// })->name('inicio');
