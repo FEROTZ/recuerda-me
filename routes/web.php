@@ -29,15 +29,6 @@ Route::get('/misión', function () {
 Route::get('/contacto', function () {
     return view('landingpage.servicio.contacto');
 })->name('contacto');
-Route::get('/Admin', function () {
-    return view('Admin.pruebaAdmin');
-})->name('Admin');
-Route::get('/Crear', function () {
-    return view('Admin.CrearAdmin');
-})->name('Crear');
-Route::get('/Mostrar', function () {
-    return view('Admin.MostrarAdmin');
-})->name('Mostrar');
 
 Route::get('/administradores', function () {
     return view('admin.index');
@@ -52,6 +43,18 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/admin', function () {
+        return view('Admin.index');
+    })->name('Admin');
+    Route::get('/crear', function () {
+        return view('Admin.CrearAdmin');
+    })->name('Crear');
+    Route::get('/mostrar', function () {
+        return view('Admin.MostrarAdmin');
+    })->name('Mostrar');
+    Route::get('/clientes', function () {
+        return view('client.index');
+    })->name('Admin');
 });
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('landingpage.index');
