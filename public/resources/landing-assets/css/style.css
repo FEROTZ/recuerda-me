@@ -22,6 +22,10 @@ img {
   max-width: 100%;
 }
 
+#conoce-mas{
+text-align: justify;
+}
+
 a:focus,
 input:focus,
 textarea:focus,
@@ -61,6 +65,7 @@ h3{
   line-height: 1.2;
   color: #ffffff;
 }
+
 
 h1 {
   font-size: 60px;
