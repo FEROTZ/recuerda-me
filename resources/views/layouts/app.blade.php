@@ -23,8 +23,7 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
-
+            @extends('layouts.navbar')
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">

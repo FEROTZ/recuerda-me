@@ -19,14 +19,14 @@
                             <h3 class="m-0">Económico</h3>
                         </div>
                         <div class="d-flex flex-column align-items-center py-4">
-                            <p>Biografía del difunto</p>
-                            <p>Una Fotografía</p>
-                            <p>Un único código QR</p>
-                            <p>Pensamos en tu economía</p>
-                            <x-jet-button class="py-2 px-4 my-2 text-lg text-lg">
+                            <p>Biografia del difunto</p>
+                            <p>1 Fotografia</p>
+                            <p>Un unico codigo QR</p>
+                            <p>Pensamos en tu economia</p>
+                            <x-link  href="{{route('planEconomico')}}" class="py-2 px-4 my-2 text-lg text-lg">
+
                                 {{ __('Contratar ahora') }}
-                            </x-jet-button>
-                            {{-- <a href="" class="btn btn-primary py-2 px-4 my-2 text-lg text-lg">Contratar Ahora</a> --}}
+                            </x-link >
                         </div>
                     </div>
                 </div>
@@ -42,13 +42,14 @@
                             <h3 class="m-0">Básico</h3>
                         </div>
                         <div class="d-flex flex-column align-items-center py-4">
-                            <p>Biografía del difunto</p>
-                            <p>Una Fotografía</p>
-                            <p>Un único código QR</p>
-                            <p>Un vídeo de un minuto </p>
-                            <x-jet-button class="py-2 px-4 my-2 text-lg text-lg">
+
+                            <p>Biografia del difunto</p>
+                            <p>1 Fotografia</p>
+                            <p>Un unico codigo QR</p>
+                            <p>1 video de un minuto </p>
+                            <x-link  href="{{route('planBasico')}}" class="py-2 px-4 my-2 text-lg text-lg">
                                 {{ __('Contratar ahora') }}
-                            </x-jet-button>
+                            </x-link >
                         </div>
                     </div>
                 </div>
@@ -64,13 +65,14 @@
                             <h3 class="m-0">Medium</h3>
                         </div>
                         <div class="d-flex flex-column align-items-center py-4">
-                            <p>Biografía del difunto</p>
-                            <p>Una Fotografía</p>
-                            <p>Un único código QR</p>
-                            <p>Un vídeo de 3 minutos </p>
-                            <x-jet-button class="py-2 px-4 my-2 text-lg text-lg">
+
+                            <p>Biografia del difunto</p>
+                            <p>1 Fotografia</p>
+                            <p>Un unico codigo QR</p>
+                            <p>1 video de 3 minutos </p>
+                            <x-link  href="{{route('planPremiun')}}" class="py-2 px-4 my-2 text-lg text-lg">
                                 {{ __('Contratar ahora') }}
-                            </x-jet-button>
+                            </x-link >
                         </div>
                     </div>
                 </div>
