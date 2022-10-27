@@ -109,7 +109,7 @@
                         </div>
                         <div class="services-content mt-15">
                             <h4 class="services-title">Servicios</h4>
-                            <p class="mt-20">Selecciona el paquete que se adecué a tus necesidades</p>
+                            <p class="mt-20">Selecciona el paquete que se adecué a tus necesidades.</p>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -120,7 +120,7 @@
                             <i class="fa-solid fa-cross"></i>
                         </div>
                         <div class="services-content mt-15">
-                            <h4 class="services-title">Lapida virtual</h4>
+                            <h4 class="services-title">Lápida virtual</h4>
                             <p class="mt-20">Mostrará el código QR que almacenará tus recuerdos.</p>
                         </div>
                     </div> <!-- single services -->

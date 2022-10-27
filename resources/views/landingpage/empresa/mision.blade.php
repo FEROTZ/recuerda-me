@@ -9,7 +9,7 @@
                             <img src="{{ asset('resources/landing-assets/images/banner/shape/banner 1.png')}}" alt="About">
                         </div>
                         <div data-aos="fade-right" class="about-btn ">
-                            <a class="main-btn cursor-normal" href="{{ route('servicios')}}"><span>QR</span> una experiencia unica</a>
+                            <a class="main-btn cursor-normal" href="{{ route('servicios')}}"><span>QR</span> una experiencia única</a>
                         </div>
                         <div class="single-image image-tow float-right">
                         <img src="{{ asset('resources/landing-assets/images/banner/shape/banner 2.png')}}" alt="About">
