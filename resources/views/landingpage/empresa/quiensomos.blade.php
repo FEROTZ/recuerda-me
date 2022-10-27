@@ -6,11 +6,11 @@
                 <div class="col-lg-6">
                     <div class="section-title text-center pb-20">
                         <h6 class="text-primary text-uppercase font-weight-bold">Conócenos</h6>
-                        <h1 class="mb-4">¿Quien somos?</h1>
+                        <h1 class="mb-4">¿Quiénes somos?</h1>
                         <p>
                             Recuerda.me es una empresa digital 100% mexicana e innovadora.
                             Ofrecemos un servicio digital fácil de usar para que las familias puedan subir,
-                            almacenar y compartir fotos, videos, audios y textos en un solo lugar. Todo a traves de la
+                            almacenar y compartir fotos, vídeos, audios y textos en un solo lugar. Todo a través de la
                             opción de escanear un código QR que te permite acceder a los recuerdos en cualquier momento.
                         </p>
                     </div>
@@ -33,13 +33,13 @@
         <div class="carousel"
         data-flickity='{ "imagesLoaded": true, "percentPosition": false, "autoPlay": true,
         "freeScroll": true, "wrapAround": true }'>
-            <img src="{{ asset('resources/landing-assets/img/baul-fotos.jpg')}}" alt="Baúl de fotos">
-            <img src="{{ asset('resources/landing-assets/img/grandma-photos.jpg')}}" alt="Abuela con fotos">
-            <img src="{{ asset('resources/landing-assets/img/militares.jpg')}}" alt="Baúl de fotos">
-            <img src="{{ asset('resources/landing-assets/img/carta-mano.jpg')}}" alt="Carta escrita a mano">
-            <img src="{{ asset('resources/landing-assets/img/climb-mountain.jpg')}}" alt="Mujer escalando montaña">
-            <img src="{{ asset('resources/landing-assets/img/cancer-mama.jpg')}}" alt="Cinta cancer de mama">
-            <img src="{{ asset('resources/landing-assets/img/fotos-viejas.jpg')}}" alt="Fotos antiguas">
+            <img src="{{ asset('resources/landing-assets/img/quienessomos-img/abuelita.jpg')}}" alt="Abuela">
+            <img src="{{ asset('resources/landing-assets/img/quienessomos-img/extremo.jpg')}}" alt="Extremo">
+            <img src="{{ asset('resources/landing-assets/img/quienessomos-img/familia.jpg')}}" alt="Familia">
+            <img src="{{ asset('resources/landing-assets/img/quienessomos-img/fotoantigua.jpg')}}" alt="Foto antigua">
+            <img src="{{ asset('resources/landing-assets/img/quienessomos-img/carta.jpg')}}" alt="Carta">
+            <img src="{{ asset('resources/landing-assets/img/quienessomos-img/foto.jpg')}}" alt="Foto">
+            <img src="{{ asset('resources/landing-assets/img/quienessomos-img/abuelitos.jpg')}}" alt="Abuelitos">
         </div>
     </section>
 @endsection
