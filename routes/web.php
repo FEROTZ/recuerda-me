@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,24 +35,11 @@ Route::get('/administradores', function () {
     return view('admin.index');
 })->name('admin.index');
 
-Route::get('/prueba', function () {
-    return view('dashboard');
-})->name('prueba');
-
-Route::get('/planPremiun', function () {
-    return view('client.index');
-})->name('client');
-
-Route::get('/tablaProducto', function () {
-    return view('client.tablaPlanes');
-})->name('tablaPlanes');
-
-
 // Dashboard usuario
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -77,7 +65,13 @@ Route::middleware([
     Route::get('/planPremiun', function () {
         return view('client.planPremiun');
     })->name('planPremiun');
+    Route::get('/tablaProducto', function () {
+        return view('client.tablaPlanes');
+    })->name('tablaPlanes');
 });
+
+// Route::post('login', LoginController::class, 'login');
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('landingpage.index');
 // })->name('inicio');

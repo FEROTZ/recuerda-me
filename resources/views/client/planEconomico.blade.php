@@ -9,12 +9,12 @@
                 <div class="mt-6 mx-28">
                     <div class="text-center">
                         <div class="text-right">
-                            <x-jet-button class="ml-4">
+                            <x-link  href="#" class="my-2 text-lg text-lg">
                                 {{ __('Reiniciar') }}
-                            </x-jet-button>
-                            <x-jet-button class="ml-4">
+                            </x-link >
+                            <x-link  href="{{route('tablaPlanes')}}" class="my-2 text-lg text-lg">
                                 {{ __('Guardar') }}
-                            </x-jet-button>
+                            </x-link >
                         </div>
                         <h2>Dejar a esta persona</h2>
                     </div>
@@ -53,7 +53,7 @@
                                                         <h4 class="modal-title">¿Que deseas hacer?</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>¿Seguro que quieres guarar esta nota?</p>
+                                                        <p>¿Seguro que quieres guardar esta nota?</p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
