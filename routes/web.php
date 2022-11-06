@@ -29,6 +29,19 @@ Route::get('/misión', function () {
 Route::get('/contacto', function () {
     return view('landingpage.servicio.contacto');
 })->name('contacto');
+Route::get('/Admin', function () {
+    return view('Admin.pruebaAdmin');
+})->name('Admin');
+Route::get('/Crear', function () {
+    return view('Admin.CrearAdmin');
+})->name('Crear');
+Route::get('/Mostrar', function () {
+    return view('Admin.MostrarAdmin');
+})->name('Mostrar');
+
+Route::get('/administradores', function () {
+    return view('admin.index');
+})->name('admin.index');
 
 Route::get('/prueba', function () {
     return view('dashboard');
@@ -62,3 +75,6 @@ Route::middleware([
         return view('client.planPremiun');
     })->name('planPremiun');
 });
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('landingpage.index');
+// })->name('inicio');
