@@ -1,7 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +12,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Landing Page recuerda.me
+use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\Route;
+
+
+
+// Auth::routes();
+
+// Route::get('/admin', [LoginController::class, 'showAdminLoginForm'])->name('admin.login-view');
+// Route::post('/admin', [LoginController::class, 'adminLogin'])->name('admin.login');
+
+// Route::get('/admin/register', [RegisterController::class, 'showAdminRegisterForm'])->name('admin.register-view');
+// Route::post('/admin/register', [RegisterController::class, 'createAdmin'])->name('admin.register');
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/admin/dashboard', function () {
+//     return view('admin');
+// })->middleware('auth:admin');
+
+/*
+|--------------------------------------------------------------------------
+| A PARTIR DE AQUÍ EMPIEZAN MIS RUTAS ANTIGUAS
+|--------------------------------------------------------------------------
+|
+| Todo el código o las rutas que se encuentran en la parte superior
+| de este archivo, fueron añadidas con el fin de crear un login
+| para los usuarios administradores de esta aplicación :)
+|
+*/
 Route::get('/', function () {
     return view('landingpage.index');
 })->name('home');
@@ -29,23 +55,14 @@ Route::get('/misión', function () {
 Route::get('/contacto', function () {
     return view('landingpage.servicio.contacto');
 })->name('contacto');
-Route::get('/Admin', function () {
-    return view('Admin.pruebaAdmin');
-})->name('Admin');
-Route::get('/Crear', function () {
-    return view('Admin.CrearAdmin');
-})->name('Crear');
-Route::get('/Mostrar', function () {
-    return view('Admin.MostrarAdmin');
-})->name('Mostrar');
 
 Route::get('/administradores', function () {
     return view('admin.index');
 })->name('admin.index');
 
 Route::get('/prueba', function () {
-    return view('dashboard');
-})->name('prueba');
+    return view('admin.loginAdmin');
+})->name('loginAdmin');
 
 Route::get('/planPremiun', function () {
     return view('client.index');
@@ -55,16 +72,27 @@ Route::get('/tablaProducto', function () {
     return view('client.tablaPlanes');
 })->name('tablaPlanes');
 
-
 // Dashboard usuario
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/admin', function () {
+        return view('Admin.index');
+    })->name('Admin');
+    Route::get('/crear', function () {
+        return view('Admin.CrearAdmin');
+    })->name('Crear');
+    Route::get('/mostrar', function () {
+        return view('Admin.MostrarAdmin');
+    })->name('Mostrar');
+    Route::get('/clientes', function () {
+        return view('client.index');
+    })->name('Admin');
     Route::get('/planEconomico', function () {
         return view('client.planEconomico');
     })->name('planEconomico');
