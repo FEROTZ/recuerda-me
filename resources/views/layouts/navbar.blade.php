@@ -87,7 +87,6 @@
                 hover:text-zinc-300">
             Iniciar sesión
         </a>
-
         <a href="{{ route('register') }}"
             class="hover:underline hover:underline-offset-4
                 hover:text-zinc-300">

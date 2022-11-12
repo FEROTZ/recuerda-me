@@ -3,7 +3,7 @@
 
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg my-8">  
+        <div class="bg-white overflow-hidden shadow-2xl sm:rounded-lg my-8">  
             <table class="min-w-full">
             <thead>
                 <tr>
@@ -21,7 +21,6 @@
                 <td>kevinbrayan33o@gmail.com</td>
                 <td>Plan Premiun</td>
                 <td class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200 ">
-                                
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="">
                     <button type="submit" class="flex items-center">

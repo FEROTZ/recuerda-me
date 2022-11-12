@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +12,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Landing Page recuerda.me
+use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\Route;
+
+
+
+// Auth::routes();
+
+// Route::get('/admin', [LoginController::class, 'showAdminLoginForm'])->name('admin.login-view');
+// Route::post('/admin', [LoginController::class, 'adminLogin'])->name('admin.login');
+
+// Route::get('/admin/register', [RegisterController::class, 'showAdminRegisterForm'])->name('admin.register-view');
+// Route::post('/admin/register', [RegisterController::class, 'createAdmin'])->name('admin.register');
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/admin/dashboard', function () {
+//     return view('admin');
+// })->middleware('auth:admin');
+
+/*
+|--------------------------------------------------------------------------
+| A PARTIR DE AQUÍ EMPIEZAN MIS RUTAS ANTIGUAS
+|--------------------------------------------------------------------------
+|
+| Todo el código o las rutas que se encuentran en la parte superior
+| de este archivo, fueron añadidas con el fin de crear un login
+| para los usuarios administradores de esta aplicación :)
+|
+*/
 Route::get('/', function () {
     return view('landingpage.index');
 })->name('home');
@@ -34,6 +59,18 @@ Route::get('/contacto', function () {
 Route::get('/administradores', function () {
     return view('admin.index');
 })->name('admin.index');
+
+Route::get('/prueba', function () {
+    return view('admin.loginAdmin');
+})->name('loginAdmin');
+
+Route::get('/planPremiun', function () {
+    return view('client.index');
+})->name('client');
+
+Route::get('/tablaProducto', function () {
+    return view('client.tablaPlanes');
+})->name('tablaPlanes');
 
 // Dashboard usuario
 Route::middleware([
