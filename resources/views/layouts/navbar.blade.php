@@ -73,6 +73,10 @@
         hover:text-zinc-300">
         Contacto
     </a>
+    <a href="{{ route('tablaPlanes') }}" class="hover:underline hover:underline-offset-4
+    hover:text-zinc-300">
+    Tus Planes
+</a>
     @auth
         <form method="POST" action="{{ route('logout') }}" x-data>
             @csrf

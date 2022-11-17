@@ -74,6 +74,9 @@ Route::middleware([
     Route::get('/planPremiun', function () {
         return view('client.planPremiun');
     })->name('planPremiun');
+    Route::get('/tusPlanes', function () {
+        return view('client.tablaPlanes');
+    })->name('tablaPlanes');
 });
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('landingpage.index');
