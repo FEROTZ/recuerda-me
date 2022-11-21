@@ -1,5 +1,20 @@
 @extends('layouts.landing')
 @section('content')
+    @if (session('status'))
+        <div class="bg-zinc-900 text-center py-4 lg:px-4 alerta">
+            <div class="p-2 bg-zinc-800 items-center text-zinc-100 leading-none lg:rounded-full flex lg:inline-flex"
+                role="alert">
+                <span class="flex rounded-full bg-zinc-500 uppercase px-2 py-1 text-xs font-bold mr-3">Oops!</span>
+                <span class="font-semibold mr-2 text-left flex-auto">{{ session('status') }}</span>
+                <svg class="fill-current h-6 w-6 text-red-500" id="close-btn" role="button" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20">
+                    <title>Cerrar</title>
+                    <path
+                        d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                </svg>
+            </div>
+        </div>
+    @endif
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
@@ -23,10 +38,14 @@
                             <p>1 Fotografia</p>
                             <p>Un unico codigo QR</p>
                             <p>Pensamos en tu economia</p>
-                            <x-link  href="{{route('planEconomico')}}" class="py-2 px-4 my-2 text-lg text-lg">
-
-                                {{ __('Contratar ahora') }}
-                            </x-link >
+                            @auth
+                                <x-paypal-button href="{{ route('paypal.pay') }}" class="py-2 px-4 my-2 text-lg text-lg">
+                                </x-paypal-button>
+                            @else
+                                <x-link-button href="{{ route('planBasico') }}" class="py-2 px-4 my-2 text-lg text-lg">
+                                    {{ __('Contratar ahora') }}
+                                </x-link-button>
+                            @endauth
                         </div>
                     </div>
                 </div>
@@ -47,9 +66,14 @@
                             <p>1 Fotografia</p>
                             <p>Un unico codigo QR</p>
                             <p>1 video de un minuto </p>
-                            <x-link  href="{{route('planBasico')}}" class="py-2 px-4 my-2 text-lg text-lg">
-                                {{ __('Contratar ahora') }}
-                            </x-link >
+                            @auth
+                                <x-paypal-button href="{{ route('paypal.pay') }}" class="py-2 px-4 my-2 text-lg text-lg">
+                                </x-paypal-button>
+                            @else
+                                <x-link-button href="{{ route('planBasico') }}" class="py-2 px-4 my-2 text-lg text-lg">
+                                    {{ __('Contratar ahora') }}
+                                </x-link-button>
+                            @endauth
                         </div>
                     </div>
                 </div>
@@ -70,9 +94,14 @@
                             <p>1 Fotografia</p>
                             <p>Un unico codigo QR</p>
                             <p>1 video de 3 minutos </p>
-                            <x-link  href="{{route('planPremiun')}}" class="py-2 px-4 my-2 text-lg text-lg">
-                                {{ __('Contratar ahora') }}
-                            </x-link >
+                            @auth
+                                <x-paypal-button href="{{ route('paypal.pay') }}" class="py-2 px-4 my-2 text-lg text-lg">
+                                </x-paypal-button>
+                            @else
+                                <x-link-button href="{{ route('planPremiun') }}" class="py-2 px-4 my-2 text-lg text-lg">
+                                    {{ __('Contratar ahora') }}
+                                </x-link-button>
+                            @endauth
                         </div>
                     </div>
                 </div>
@@ -94,9 +123,14 @@
                             <p>3 Fotografías</p>
                             <p>2 códigos QR</p>
                             <p>Un vídeo de 10 minutos </p>
-                            <x-jet-button class="py-2 px-4 my-2 text-lg text-lg">
-                                {{ __('Contratar ahora') }}
-                            </x-jet-button>
+                            @auth
+                                <x-paypal-button href="{{ route('paypal.pay') }}" class="py-2 px-4 my-2 text-lg text-lg">
+                                </x-paypal-button>
+                            @else
+                                <x-link-button href="#" class="py-2 px-4 my-2 text-lg text-lg">
+                                    {{ __('Contratar ahora') }}
+                                </x-link-button>
+                            @endauth
                         </div>
                     </div>
                 </div>
@@ -116,9 +150,14 @@
                             <p>Un vídeo no tiene límite de tiempo</p>
                             <p>El cliente elige el número de secciones </p>
                             <p>Genera hasta 5 códigos QR</p>
-                            <x-jet-button class="py-2 px-4 my-2 text-lg text-lg">
-                                {{ __('Contratar ahora') }}
-                            </x-jet-button>
+                            @auth
+                                <x-paypal-button href="{{ route('paypal.pay') }}" class="py-2 px-4 my-2 text-lg text-lg">
+                                </x-paypal-button>
+                            @else
+                                <x-link-button href="#" class="py-2 px-4 my-2 text-lg text-lg">
+                                    {{ __('Contratar ahora') }}
+                                </x-link-button>
+                            @endauth
                         </div>
                     </div>
                 </div>
@@ -138,13 +177,39 @@
                             <p>Agregar minutos a tu vídeo</p>
                             <p>Agregar fotografías</p>
                             <p>Agregar canciones extra</p>
-                            <x-jet-button class="py-2 px-4 my-2 text-lg text-lg">
-                                {{ __('Contratar ahora') }}
-                            </x-jet-button>
+                            @auth
+                                <x-paypal-button href="{{ route('paypal.pay') }}" class="py-2 px-4 my-2 text-lg text-lg">
+                                </x-paypal-button>
+                            @else
+                                <x-link-button href="#" class="py-2 px-4 my-2 text-lg text-lg">
+                                    {{ __('Contratar ahora') }}
+                                </x-link-button>
+                            @endauth
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    @if (Route::is('servicios'))
+        <script>
+            let alerta = document.querySelector('.alerta');
+            let closeBtn = document.querySelector('#close-btn');
+            closeBtn.addEventListener('click', function() {
+                closeAlert();
+            });
+
+            function closeAlert() {
+                alerta.style.opacity = '0'
+            }
+
+            setTimeout(() => {
+                console.log('hola');
+                closeAlert();
+            }, 4500);
+            alerta.addEventListener('transitionend', () => alerta.remove());
+        </script>
+    @endif
 @endsection

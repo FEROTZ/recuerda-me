@@ -28,7 +28,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('resources/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/style.css') }}">
-    {{-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> --}}
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -46,7 +46,7 @@
     </header>
     @yield('content')
     @extends('layouts.footer')
-
+    
     <!---====== jquery js ======-->
     <script src="{{ asset('resources/landing-assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
     <script src="{{ asset('resources/landing-assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -63,6 +63,7 @@
     <script src="{{ asset('resources/landing-assets/js/aos.js') }}"></script>
     <!--====== Main js ======-->
     <script src="{{ asset('resources/landing-assets/js/main.js') }}"></script>
+    @yield('scripts')
     {{-- <script src="{{ asset('resources/landing-assets/js/menu.js')}}"></script> --}}
 </body>
 
