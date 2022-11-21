@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Servicios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use PayPal\Api\Amount;
@@ -30,22 +31,25 @@ class PaymentController extends Controller
         );
     }
 
-    public function payWithPayPal()
+    public function payWithPayPal(Request $request)
     {
-        //Se crea el objeto Payer
+        $id = $request->id;
+        $service = Servicios::find($id);
+        $name = strtolower($service->name);
+        $price = $service->price;
+        //Se crea el objeto Payer que representa el pagador
         $payer = new Payer();
-        $payer->setPaymentMethod('paypal');
+        $payer->setPaymentMethod('PayPal');
 
         //Se crea el objeto Amount que almacena el precio del producto y la moneda
         $amount = new Amount();
-        $amount->setTotal('1200.00');
+        $amount->setTotal($service->price);
         $amount->setCurrency('MXN');
 
         //Se crea el objeto Transaction que almacena el monto y la descripción del producto
-        //TODO: Sacar el monto y descripción del producto de la base de datos
         $transaction = new Transaction();
         $transaction->setAmount($amount);
-        $transaction->setDescription('Contrata el paquete _______ de Recuerda.me');
+        $transaction->setDescription('Contrata el paquete ' . $name . ' en Recuerda.me');
 
         //Se crea el objeto RedirectUrls que almacena la URL de aprobación y cancelación de compra
         //? Se va a redirigir a la misma página de aprobación y cancelación desde PayPal?
@@ -98,12 +102,12 @@ class PaymentController extends Controller
 
         if($result->getState() === 'approved'){
             //TODO: Agregar en la tabla de pedidos, la compra realizada
-            $status = "El pago se ha realizado correctamente";
+            $status = "El pago se ha realizado correctamente!";
             //TODO: #16 averiguar la forma en que redireccione a la ruta indicada según el servicio que compró
-            return redirect()->route('servicios');//->with(compact('status'));
+            return redirect()->route('tablaPlanes')->with(compact('status'));
         }
 
         $status = "El pago no se ha realizado correctamente";
-        return redirect()->route('servicios');//->with(compact('status'));
+        return redirect()->route('servicios')->with(compact('status'));
     }
 }
