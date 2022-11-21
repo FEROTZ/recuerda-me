@@ -2,10 +2,10 @@
 @section('content')
     @if (session('status'))
     <div class="bg-green-700 text-center py-4 lg:px-4 alerta">
-        <div class="p-2 bg-green-600 items-center text-zinc-100 leading-none lg:rounded-full flex lg:inline-flex"
+        <div class="p-2 bg-green-600 items-center text-slate-50 leading-none lg:rounded-full flex lg:inline-flex"
             role="alert">
             <span class="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">Cool!</span>
-            <span class="font-semibold mr-2 text-left flex-auto">Tu compra se realizó con éxito!</span>
+            <span class="font-semibold mr-2 text-left flex-auto">{{ session('status') }}</span>
             <svg class="fill-current h-6 w-6 text-red-500 close-btn" role="button" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20">
                 <title>Cerrar</title>
