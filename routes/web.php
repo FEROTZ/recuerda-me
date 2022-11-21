@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaymentController;
 
 
 
@@ -55,24 +56,12 @@ Route::get('/misión', function () {
 Route::get('/contacto', function () {
     return view('landingpage.servicio.contacto');
 })->name('contacto');
-
+//? Que función cumple esta ruta?
 Route::get('/administradores', function () {
     return view('admin.index');
 })->name('admin.index');
 
-Route::get('/prueba', function () {
-    return view('admin.loginAdmin');
-})->name('loginAdmin');
-
-Route::get('/planPremiun', function () {
-    return view('client.index');
-})->name('client');
-
-Route::get('/tablaProducto', function () {
-    return view('client.tablaPlanes');
-})->name('tablaPlanes');
-
-// Dashboard usuario
+//* Dashboard usuario
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -99,10 +88,23 @@ Route::middleware([
     Route::get('/planBasico', function () {
         return view('client.planBasico');
     })->name('planBasico');
+    //TODO: Eliminar ruta o agregarla con el middleware de auth
     Route::get('/planPremiun', function () {
         return view('client.planPremiun');
     })->name('planPremiun');
+    //? No entiendo que función cumple esta ruta
+    Route::get('/tablaProducto', function () {
+        return view('client.tablaPlanes');
+    })->name('tablaPlanes');
+
+    Route::get('/paypal/pay', [PaymentController::class, 'payWithPayPal']
+    )->name('paypal.pay');
+    Route::get('/paypal/status', [PaymentController::class, 'payPalStatus']
+    )->name('paypal.status');
 });
+
+// Route::post('login', LoginController::class, 'login');
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('landingpage.index');
 // })->name('inicio');

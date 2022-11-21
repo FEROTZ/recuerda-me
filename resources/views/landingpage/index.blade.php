@@ -20,7 +20,7 @@
     </div>
     <!--====== PRELOADER ENDS START ======-->
     <!--====== HEADER PART START ======--->
-    <header id="home" class="header-area pt-100">
+    <header id="home" class="header-area">
     <!--Header Banner-->
     <div class="header-banner d-flex align-items-center">
         <div class="container">
@@ -42,7 +42,7 @@
     </header>
     <!--====== HEADER PART ENDS ======-->
     <!--====== ABOUT PART START ======-->
-    <section id="about" class="about-area pt-80 pb-130">
+    <section id="about" class="about-area pt-50 pb-130">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
