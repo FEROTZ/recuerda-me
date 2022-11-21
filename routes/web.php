@@ -13,6 +13,7 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ServiciosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
 
@@ -44,18 +45,21 @@ use App\Http\Controllers\PaymentController;
 Route::get('/', function () {
     return view('landingpage.index');
 })->name('home');
-Route::get('/servicios', function () {
-    return view('landingpage.servicio.servicios');
-})->name('servicios');
+
+Route::get('/servicios', [ServiciosController::class, 'index'])->name('servicios');
+
 Route::get('/quienes-somos', function () {
     return view('landingpage.empresa.quiensomos');
 })->name('nosotros');
+
 Route::get('/misión', function () {
     return view('landingpage.empresa.mision');
 })->name('misión');
+
 Route::get('/contacto', function () {
     return view('landingpage.servicio.contacto');
 })->name('contacto');
+
 //? Que función cumple esta ruta?
 Route::get('/administradores', function () {
     return view('admin.index');
@@ -97,11 +101,13 @@ Route::middleware([
         return view('client.tablaPlanes');
     })->name('tablaPlanes');
 
-    Route::get('/paypal/pay', [PaymentController::class, 'payWithPayPal']
+    Route::get('/paypal/pay/{id}', [PaymentController::class, 'payWithPayPal']
     )->name('paypal.pay');
     Route::get('/paypal/status', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
 });
+
+
 
 // Route::post('login', LoginController::class, 'login');
 
