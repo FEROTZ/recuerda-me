@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('destinatarios', function (Blueprint $table) {
-            $table->integer ('id_destinatario');
+            $table->integer ('id_destinatario')->primary();
             $table->integer('id_cliente');
             $table->text('num_pedido');
             $table->text('correo');

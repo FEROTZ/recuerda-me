@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Ruta para el buscador
+Route::get('nombres/buscador', 'ScrollController@buscador');
 
 // Landing Page recuerda.me
 Route::get('/', function () {
