@@ -11,6 +11,8 @@ use App\Http\Controllers\Auth\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Ruta para el buscador
+Route::get('nombres/buscador', 'ScrollController@buscador');
 
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ServiciosController;
@@ -65,6 +67,11 @@ Route::get('/administradores', function () {
     return view('admin.index');
 })->name('admin.index');
 
+//! No se que funcion cumple
+Route::get('/planPremiun', function () {
+    return view('client.index');
+})->name('client');
+
 //* Dashboard usuario
 Route::middleware([
     'auth:sanctum',
@@ -96,15 +103,19 @@ Route::middleware([
     Route::get('/planPremiun', function () {
         return view('client.planPremiun');
     })->name('planPremiun');
-    //? No entiendo que función cumple esta ruta
-    Route::get('/tablaProducto', function () {
+
+    Route::get('/tusPlanes', function () {
         return view('client.tablaPlanes');
     })->name('tablaPlanes');
+    
+    //? No entiendo que función cumple esta ruta
+    Route::get('/tablaProducto', [PedidosController::class, 'index'])->name('tablaPlanes');
 
     Route::get('/paypal/pay/{id}', [PaymentController::class, 'payWithPayPal']
     )->name('paypal.pay');
     Route::get('/paypal/status', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
+
 });
 
 

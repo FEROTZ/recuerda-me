@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('destinatarios', function (Blueprint $table) {
+            $table->integer ('id_destinatario')->primary();
+            $table->text('num_pedido');
+            $table->text('correo');
+            $table->text('nombre_destinatario');
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('destinatarios');
     }
 };
