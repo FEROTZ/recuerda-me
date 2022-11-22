@@ -11,12 +11,15 @@ use App\Http\Controllers\Auth\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Ruta para el buscador
+Route::get('nombres/buscador', 'ScrollController@buscador');
 
 // use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PedidosController;
+use App\Http\Controllers\QrCodeController;
 
 
 
@@ -66,6 +69,11 @@ Route::get('/administradores', function () {
     return view('admin.index');
 })->name('admin.index');
 
+//! No se que funcion cumple
+Route::get('/planPremiun', function () {
+    return view('client.index');
+})->name('client');
+
 //* Dashboard usuario
 Route::middleware([
     'auth:sanctum',
@@ -97,6 +105,11 @@ Route::middleware([
     Route::get('/planPremiun', function () {
         return view('client.planPremiun');
     })->name('planPremiun');
+
+    Route::get('/tusPlanes', function () {
+        return view('client.tablaPlanes');
+    })->name('tablaPlanes');
+    
     //? No entiendo que función cumple esta ruta
     Route::get('/tablaProducto', [PedidosController::class, 'index'])->name('tablaPlanes');
 
@@ -104,6 +117,10 @@ Route::middleware([
     )->name('paypal.pay');
     Route::get('/paypal/status/{id}', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
+
+    
+    //ruta de codigo QR
+    Route::get('/qrcode', [QrCodeController::class, 'index']);
 });
 
 
