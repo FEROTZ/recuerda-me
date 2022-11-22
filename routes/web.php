@@ -16,6 +16,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ServiciosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\QrCodeController;
 
 
 
@@ -105,6 +106,9 @@ Route::middleware([
     )->name('paypal.pay');
     Route::get('/paypal/status', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
+    
+    //ruta de codigo QR
+    Route::get('/qrcode', [QrCodeController::class, 'index']);
 });
 
 

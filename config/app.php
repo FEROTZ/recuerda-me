@@ -154,7 +154,9 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => [ 
+        //codigo qr
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -211,6 +213,9 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        //Codigo QR
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
