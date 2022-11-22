@@ -12,10 +12,11 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\ServiciosController;
+// use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PedidosController;
 
 
 
@@ -97,13 +98,11 @@ Route::middleware([
         return view('client.planPremiun');
     })->name('planPremiun');
     //? No entiendo que función cumple esta ruta
-    Route::get('/tablaProducto', function () {
-        return view('client.tablaPlanes');
-    })->name('tablaPlanes');
+    Route::get('/tablaProducto', [PedidosController::class, 'index'])->name('tablaPlanes');
 
     Route::get('/paypal/pay/{id}', [PaymentController::class, 'payWithPayPal']
     )->name('paypal.pay');
-    Route::get('/paypal/status', [PaymentController::class, 'payPalStatus']
+    Route::get('/paypal/status/{id}', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
 });
 
