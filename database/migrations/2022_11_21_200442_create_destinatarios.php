@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('destinatarios', function (Blueprint $table) {
             $table->integer ('id_destinatario')->primary();
-            $table->integer('id_cliente');
             $table->text('num_pedido');
             $table->text('correo');
             $table->text('nombre_destinatario');

@@ -53,11 +53,6 @@ Route::get('/planPremiun', function () {
     return view('client.index');
 })->name('client');
 
-Route::get('/tablaProducto', function () {
-    return view('client.tablaPlanes');
-})->name('tablaPlanes');
-
-
 // Dashboard usuario
 Route::middleware([
     'auth:sanctum',
