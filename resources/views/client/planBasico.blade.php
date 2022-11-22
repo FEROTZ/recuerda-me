@@ -1,20 +1,18 @@
 @extends('layouts.landing')
     @section('content')
-    
     <div class="p-4 md-8 bg-500">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">      
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <!--<x-jet-welcome />-->
-                
                 <div class="mt-6 mx-28">
                     <div class="text-center">
                         <div class="text-right">
-                            <x-jet-button class="ml-4">
+                            <x-link  href="#" class="my-2 text-lg text-lg">
                                 {{ __('Reiniciar') }}
-                            </x-jet-button>
-                            <x-jet-button class="ml-4">
+                            </x-link >
+                            <x-link  href="{{route('tablaPlanes')}}" class="my-2 text-lg text-lg">
                                 {{ __('Guardar') }}
-                            </x-jet-button>
+                            </x-link >
                         </div>
                         <h2>Dejar a esta persona</h2>
                     </div>
@@ -31,10 +29,10 @@
                     <form class="flex justify-center space-x-6">
                             <div class="p-8">
                                 <div class="flex items-center shrink-0 p-4">
-                                    <img class="w-50" src="{{ asset('resources/landing-assets/images/banner/shape/banner 2.png')}}" alt="About">
+                                    <img class="w-80" src="{{ asset('resources/landing-assets/images/banner/shape/banner 2.png')}}" alt="About">
                                 </div>
                                 <label class="block">
-                                    <span class="sr-only">Cargando video</span>
+                                    <span class="sr-only">Cargando </span>
                                     <input type="file" class="block w-full text-sm text-slate-500
                                     file:mr-4 file:py-2 file:px-4
                                     file:rounded-full file:border-0
@@ -43,7 +41,7 @@
                                     hover:file:bg-zink-100"/>
                                     </label>
                                     <div class="flex items-center space-x-4 p-4">
-                                        <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Cargar Imagenes</a> 
+                                        <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Cargar Nota</a> 
                                         <!-- Modal / Ventana / Overlay en HTML -->
                                         <div id="victorModal" class="modal fade">
                                             <div class="modal-dialog">
@@ -53,7 +51,7 @@
                                                         <h4 class="modal-title">¿Que deseas hacer?</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>¿Seguro que quieres borrar tu Recuerdo tu Imagenes?</p>
+                                                        <p>¿Seguro que quieres borrar tu Recuerdo tu Nota?</p>
                                                         <p class="text-warning"><small>Si lo borras, nunca podrás recuperarlo.</small></p>
                                                     </div>
                                                     <div class="modal-footer">
@@ -68,10 +66,10 @@
                             </div>
                             <div class="p-8">
                                 <div class=" flex items-center shrink-0 p-4">
-                                    <img class="w-50" src="{{ asset('resources/landing-assets/images/banner/shape/banner 2.png')}}" alt="About">
+                                    <img class="w-80" src="{{ asset('resources/landing-assets/images/banner/shape/banner 2.png')}}" alt="About">
                             </div>
                                 <label class="block">
-                                    <span class="sr-only">Cargando video</span>
+                                    <span class="sr-only">Cargando Imagen</span>
                                     <input type="file" class="block w-full text-sm text-slate-500
                                     file:mr-4 file:py-2 file:px-4
                                     file:rounded-full file:border-0
@@ -80,7 +78,7 @@
                                     hover:file:bg-zink-100"/>
                                     </label>
                                     <div class="flex items-center space-x-4 p-4">
-                                        <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Cargar Videos</a> 
+                                        <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Cargar Imagen</a> 
                                         <!-- Modal / Ventana / Overlay en HTML -->
                                         <div id="victorModal" class="modal fade">
                                             <div class="modal-dialog">
@@ -90,7 +88,7 @@
                                                         <h4 class="modal-title">¿Que deseas hacer?</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>¿Seguro que quieres borrar tu Recuerdo de videos?</p>
+                                                        <p>¿Seguro que quieres borrar tu Recuerdo de imagen?</p>
                                                         <p class="text-warning"><small>Si lo borras, nunca podrás recuperarlo.</small></p>
                                                     </div>
                                                     <div class="modal-footer">

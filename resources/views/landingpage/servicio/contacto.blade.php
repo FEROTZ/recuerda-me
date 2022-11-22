@@ -35,9 +35,7 @@
                                 <div class="col-md-12">
                                     <div class="single-form form-group">
                                         <x-jet-label for="mensaje" value="{{ __('Mensaje') }}" />
-                                        <textarea class='border-gray-300 focus:border-zinc-900 focus:ring
-                                            focus:ring-zinc-400 focus:ring-opacity-50 rounded-md shadow-sm'
-                                            name="message" data-error="Por favor escriba su mensaje" required="required"></textarea>
+                                        <x-text-area name="message" data-error="Por favor escriba su mensaje" required="required"></x-text-area>
                                     </div>
                                 </div>
                                 <p class="form-message"></p>

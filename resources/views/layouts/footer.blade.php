@@ -2,8 +2,8 @@
     <div class="footer-widget pt-50 pb-50">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-5 col-sm-8">
-                    <div class="footer-logo mt-20">
+                <div class="col-lg-4 col-md-5 col-sm-6">
+                    <div class="footer-logo mt-45">
                         <a href="{{ route('home') }}">
                             <img src="{{ asset('resources/logo/recuerdame-logo.png') }}" alt="Logo">
                         </a>

@@ -18,12 +18,12 @@
                 Inicio
             </a>
             @if (Auth::user()->id == 1)
-                <a href="#" class="hover:underline hover:underline-offset-4
+                <a href="{{ route('Admin') }}" class="hover:underline hover:underline-offset-4
                 hover:text-zinc-300">
                     Administradores
                 </a>
             @endif
-            <a href="#" class="hover:underline hover:underline-offset-4
+            <a href="{{ route('home') }}" class="hover:underline hover:underline-offset-4
             hover:text-zinc-300">
                 Clientes
             </a>
@@ -91,7 +91,6 @@
                 hover:text-zinc-300">
             Iniciar sesión
         </a>
-
         <a href="{{ route('register') }}"
             class="hover:underline hover:underline-offset-4
                 hover:text-zinc-300">
