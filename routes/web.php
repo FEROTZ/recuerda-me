@@ -14,10 +14,11 @@ use App\Http\Controllers\Auth\LoginController;
 //Ruta para el buscador
 Route::get('nombres/buscador', 'ScrollController@buscador');
 
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\ServiciosController;
+// use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\QrCodeController;
 
 
@@ -114,7 +115,7 @@ Route::middleware([
 
     Route::get('/paypal/pay/{id}', [PaymentController::class, 'payWithPayPal']
     )->name('paypal.pay');
-    Route::get('/paypal/status', [PaymentController::class, 'payPalStatus']
+    Route::get('/paypal/status/{id}', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
 
     

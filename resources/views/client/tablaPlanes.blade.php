@@ -14,7 +14,12 @@
             </svg>
         </div>
     </div>
-    @endif
+    @endif 
+    @isset($pedidos)
+        <script>
+            console.log({!! json_encode($pedidos) !!});
+        </script>
+    @endisset
     <div class="flex flex-col py-12">
         <div class="overflow-x-auto max-w-7xl">
             <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
