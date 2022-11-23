@@ -2716,3 +2716,15 @@ p.form-message.error {
   color: #161415;
   background-color: #fff;
 }
+.Bricardo{
+  display: flex;
+  justify-content: center;
+  margin-left: -100px;
+}
+
+.ricardocol{
+  background-color: #121619d8;
+}
+.ricardtex{
+  color: white;
+}

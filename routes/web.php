@@ -61,11 +61,6 @@ Route::get('/contacto', function () {
     return view('landingpage.servicio.contacto');
 })->name('contacto');
 
-//? Que función cumple esta ruta?
-Route::get('/administradores', function () {
-    return view('admin.index');
-})->name('admin.index');
-
 //* Dashboard usuario
 Route::middleware([
     'auth:sanctum',
@@ -77,7 +72,7 @@ Route::middleware([
     })->name('dashboard');
     Route::get('/admin', function () {
         return view('Admin.index');
-    })->name('Admin');
+    })->name('admin');
     Route::get('/crear', function () {
         return view('Admin.CrearAdmin');
     })->name('Crear');
@@ -106,6 +101,16 @@ Route::middleware([
     )->name('paypal.pay');
     Route::get('/paypal/status', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
+
+    Route::get('/qr', function () {
+        return view('QR.FormularioQR');
+    })->name('FormularioQR');
+
+    Route::get('/card', function () {
+        return view('QR.TarjetaQR');
+    })->name('TarjetaQR');
+
+
     
     //ruta de codigo QR
     Route::get('/qrcode', [QrCodeController::class, 'index']);
