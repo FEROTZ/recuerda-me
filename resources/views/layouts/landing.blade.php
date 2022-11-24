@@ -67,6 +67,7 @@
       <!--====== Main js ======-->
       <script src="{{ asset('resources/landing-assets/js/main.js')}}"></script>
       {{-- <script src="{{ asset('resources/landing-assets/js/menu.js')}}"></script> --}}
+      @yield('scripts')
     </body>
 
 </html>
