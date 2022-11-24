@@ -118,11 +118,28 @@ Route::middleware([
     Route::get('/paypal/status/{id}', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
 
+
     
     //ruta de codigo QR
     Route::get('/qrcode', [QrCodeController::class, 'index']);
 });
+//Servicios CRUD
 
+//Servicios
+Route::get('/service',[ServiciosController::class,'indexAdmin']
+)->name('servicios.show');
+//Create 
+Route::get('/service/create',[ServiciosController::class,'create']
+)->name('servicios.create');
+
+Route::post('/service/store',[ServiciosController::class,'store']//Ruta
+)->name('servicios.store');//Nombre ruta
+//Eliminar
+Route::resourse('/service/destroy',[ServiciosController::class,'destroy']
+)->name('servicios.destroy');
+//Editar
+Route::get('/service/edit',[ServiciosController::class,'edit']
+)->name('servicios.edit');
 
 
 // Route::post('login', LoginController::class, 'login');
