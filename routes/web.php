@@ -11,7 +11,6 @@ use App\Http\Controllers\Auth\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Ruta para el buscador
 
 // use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +44,9 @@ use App\Http\Controllers\QrCodeController;
 | para los usuarios administradores de esta aplicación :)
 |
 */
+//Ruta para el buscador
+Route::get('search/servicios', 'SearchCroller@Servicios')->name('search.servicios');
+
 Route::get('/', function () {
     return view('landingpage.index');
 })->name('home');
@@ -124,13 +126,27 @@ Route::middleware([
     Route::get('/card', function () {
         return view('QR.TarjetaQR');
     })->name('TarjetaQR');
-
-
     
     //ruta de codigo QR
     Route::get('/qrcode', [QrCodeController::class, 'index']);
 });
+//Servicios CRUD
 
+//Servicios
+Route::get('/service',[ServiciosController::class,'indexAdmin']
+)->name('servicios.show');
+//Create 
+Route::get('/service/create',[ServiciosController::class,'create']
+)->name('servicios.create');
+
+Route::post('/service/store',[ServiciosController::class,'store']//Ruta
+)->name('servicios.store');//Nombre ruta
+//Eliminar
+Route::resourse('/service/destroy',[ServiciosController::class,'destroy']
+)->name('servicios.destroy');
+//Editar
+Route::get('/service/edit',[ServiciosController::class,'edit']
+)->name('servicios.edit');
 
 
 // Route::post('login', LoginController::class, 'login');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pedidos;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PedidosController extends Controller
 {
@@ -16,7 +17,12 @@ class PedidosController extends Controller
     public function index()
     {
         $user_id = Auth::id();
-        $pedidos = Pedidos::where('payer_id', $user_id)->get();
+        $pedidos = DB::table('pedidos')
+            ->join('servicios', 'pedidos.service_id', '=', 'servicios.id')
+            ->join('users', 'pedidos.payer_id', '=', 'users.id')
+            ->select('pedidos.id as pedidoId', 'pedidos.created_at as fechaCompra', 'servicios.name as servicioNombre', 'servicios.price as servicioPrecio')
+            ->where('payer_id', $user_id)
+            ->get();
         return view('client.tablaPlanes')->withPedidos($pedidos);
     }
 
