@@ -21,13 +21,13 @@
         <!--====== Flickity css ======-->
         <link rel="stylesheet" href="{{ asset('resources/landing-assets/css/flickity.min.css')}}">
         <!--====== Flickity js ======-->
+        <!---Esta parte es para el buscador-->
+        <link rel="stylesheet" href="{{asset('resources/landing-assets/vendor/jquery-ui-1.13.2/jquery-ui.css')}}" >
         <script src="{{ asset('resources/landing-assets/js/flickity.pkgd.min.js')}}"></script>
         <!--====== Style css ======-->
         <!--====== Font awesome ======-->
         <script src="https://kit.fontawesome.com/e65f2cf6ae.js" crossorigin="anonymous"></script>
         <!-- Scripts -->
-        <!--Aqui va el scrip del buscador que apunta a la carpeta js-->
-      <script src="{{ asset('resources/landing-assets/js/search.js')}}" type="module"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('resources/css/style.css')}}">
@@ -41,7 +41,7 @@
         <div class="search-bar col-start-2 col-span-4">
           <div class="inputs">
               <i class="fa fa-search icon"></i>
-              <x-jet-input id="mysearch" class="block w-full indent-4 search text-zinc-900 from-control" type="text"  placeholder="Realizar una búsqueda..." autofocus/>
+              <x-jet-input id="search" class="block w-full indent-4 search text-zinc-900 from-control" type="text"  placeholder="Realizar una búsqueda..." autofocus/>
           </div>
           <ul id="showlist" tabindex="1" class="list-group"></ul>
         </div>
@@ -68,5 +68,28 @@
       <script src="{{ asset('resources/landing-assets/js/main.js')}}"></script>
       {{-- <script src="{{ asset('resources/landing-assets/js/menu.js')}}"></script> --}}
     </body>
+    <!--Codigo para el buscador-->
+    @section('js')
+    <!--Integrar el Jquery-iu-->
+    <link rel="stylesheet" href="{{asset('resources/landing-assets/vendor/jquery-ui-1.13.2/jquery-ui.min.js')}}" >
+      
+    <script>
+        
+      $('#search').autocomplete({
+        source: function(request, response){
+          $.ajax({
+            url: '{{route('search.servicios')}}',
+            dataType: 'json', 
+            data: {
+              tem: request.tem
+            },
+            success: function(data){
+              response(data);
+            }
+          });
+        }
+      });
+    </script>
 
+    <!--Find del buscador-->
 </html>
