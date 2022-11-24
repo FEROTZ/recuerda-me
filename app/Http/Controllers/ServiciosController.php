@@ -14,8 +14,14 @@ class ServiciosController extends Controller
      */
     public function index()
     {
+        
         $servicios = Servicios::all();
         return view('landingpage.servicio.servicios')->withServicios($servicios);
+    }
+
+    public function indexAdmin(){
+        $datos['servicios']=Servicios::paginate(10);
+        return view('service.index',$datos);
     }
 
     /**
@@ -25,7 +31,7 @@ class ServiciosController extends Controller
      */
     public function create()
     {
-        //
+        return view('service.create');
     }
 
     /**
@@ -36,7 +42,11 @@ class ServiciosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$datosServicios=request()->all();
+        $datosServicios=request()->except('_token');//Retira el token que genera el formulario -@csrf
+        Servicios::insert($datosServicios);
+        return response()->json($datosServicios);
+
     }
 
     /**
@@ -56,9 +66,11 @@ class ServiciosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit (Servicios $id)
     {
-        //
+        $servicio=Servicios::findOrFail($id);
+        return view ('service.edit', compact('servicio'));
+        
     }
 
     /**
@@ -82,5 +94,9 @@ class ServiciosController extends Controller
     public function destroy($id)
     {
         //
+    Servicios::destroy($id);
+    // return  redirect('service.index');
+     $servicio=Servicios::find($id);
+     $servicio->delete();
     }
 }
