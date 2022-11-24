@@ -11,9 +11,6 @@ use App\Http\Controllers\Auth\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Ruta para el buscador
-Route::get('nombres/buscador', 'ScrollController@buscador');
-
 // use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiciosController;
@@ -46,6 +43,9 @@ use App\Http\Controllers\QrCodeController;
 | para los usuarios administradores de esta aplicación :)
 |
 */
+//Ruta para el buscador
+Route::get('search/servicios', 'SearchCroller@Servicios')->name('search.servicios');
+
 Route::get('/', function () {
     return view('landingpage.index');
 })->name('home');
