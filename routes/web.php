@@ -11,11 +11,13 @@ use App\Http\Controllers\Auth\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Ruta para el buscador
 
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\ServiciosController;
+// use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\QrCodeController;
 
 
@@ -61,6 +63,16 @@ Route::get('/contacto', function () {
     return view('landingpage.servicio.contacto');
 })->name('contacto');
 
+//? Que función cumple esta ruta?
+Route::get('/administradores', function () {
+    return view('admin.index');
+})->name('admin.index');
+
+//! No se que funcion cumple
+Route::get('/planPremiun', function () {
+    return view('client.index');
+})->name('client');
+
 //* Dashboard usuario
 Route::middleware([
     'auth:sanctum',
@@ -92,14 +104,17 @@ Route::middleware([
     Route::get('/planPremiun', function () {
         return view('client.planPremiun');
     })->name('planPremiun');
-    //? No entiendo que función cumple esta ruta
-    Route::get('/tablaProducto', function () {
+
+    Route::get('/tusPlanes', function () {
         return view('client.tablaPlanes');
     })->name('tablaPlanes');
+    
+    //? No entiendo que función cumple esta ruta
+    Route::get('/tablaProducto', [PedidosController::class, 'index'])->name('tablaPlanes');
 
     Route::get('/paypal/pay/{id}', [PaymentController::class, 'payWithPayPal']
     )->name('paypal.pay');
-    Route::get('/paypal/status', [PaymentController::class, 'payPalStatus']
+    Route::get('/paypal/status/{id}', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
 
     Route::get('/qr', function () {

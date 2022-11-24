@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Servicios;
+use App\Models\Pedidos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use PayPal\Api\Amount;
 use PayPal\Api\Payer;
@@ -53,7 +55,7 @@ class PaymentController extends Controller
 
         //Se crea el objeto RedirectUrls que almacena la URL de aprobación y cancelación de compra
         //? Se va a redirigir a la misma página de aprobación y cancelación desde PayPal?
-        $callbackUrl = url('/paypal/status');
+        $callbackUrl = url('/paypal/status/' . $id);
         $redirectUrls = new RedirectUrls();
         $redirectUrls   ->setReturnUrl($callbackUrl)
                         ->setCancelUrl($callbackUrl);
@@ -80,9 +82,11 @@ class PaymentController extends Controller
         }
     }
     public function payPalStatus(Request $request){
+        $service_id = $request->id; //ID del servicio comprado
         $paymentId = $request->input('paymentId'); //Obtenemos el ID de la transacción
         $payerId = $request->input('PayerID'); //Obtenemos el ID del comprador
         $token = $request->input('token'); //Obtenemos el token de la transacción
+        $user_id = Auth::id();
 
         if (empty($paymentId) || empty($payerId) || empty($token)) {
             //* Si no se reciben los datos necesarios, redirigimos al usuario a la página de servicios
@@ -99,9 +103,18 @@ class PaymentController extends Controller
 
         //*Ejecutar el payment
         $result = $payment->execute($execution, $this->apiContext);
+        //*Obtener el ID de la transacción en PayPal
+        $transactions = $result->getTransactions();
+        $relatedResources = $transactions[0]->getRelatedResources();
+        $sale = $relatedResources[0]->getSale();
+        $transaction_id = $sale->getId();
 
         if($result->getState() === 'approved'){
-            //TODO: Agregar en la tabla de pedidos, la compra realizada
+            $order = new Pedidos;
+            $order->transaction_id = $transaction_id;
+            $order->payer_id = $user_id;
+            $order->service_id = $service_id;
+            $order->save();
             $status = "El pago se ha realizado correctamente!";
             //TODO: #16 averiguar la forma en que redireccione a la ruta indicada según el servicio que compró
             return redirect()->route('tablaPlanes')->with(compact('status'));

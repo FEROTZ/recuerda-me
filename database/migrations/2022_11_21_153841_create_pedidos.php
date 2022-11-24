@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+            $table->text('transaction_id');
+            $table->foreignId('payer_id')->references('id')->on('users');
+            $table->foreignId('service_id')->references('id')->on('servicios');
             $table->timestamps();
         });
     }

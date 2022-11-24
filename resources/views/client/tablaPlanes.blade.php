@@ -1,6 +1,6 @@
 @extends('layouts.landing')
 @section('content')
-    @if (session('status'))
+  @if (session('status'))
     <div class="bg-green-700 text-center py-4 lg:px-4 alerta">
         <div class="p-2 bg-green-600 items-center text-slate-50 leading-none lg:rounded-full flex lg:inline-flex"
             role="alert">
@@ -14,77 +14,118 @@
             </svg>
         </div>
     </div>
-    @endif
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-2xl sm:rounded-lg my-8">
-                <table class="min-w-full">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Nombre</th>
-                            <th>Correo Electronico</th>
-                            <th>Plan</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>kevin</td>
-                            <td>kevinbrayan33o@gmail.com</td>
-                            <td>Plan Premiun</td>
-                            <td class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200 ">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <input type="hidden" name="_token" value="">
-                                <button type="submit" class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="w-6 h-6 text-red-600 hover:text-red-800 cursor-pointer" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ricardo</td>
-                            <td>ricardoGama@gmail.com</td>
-                            <td>Plan Basico</td>
-                            <td class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200 ">
-
-                                <input type="hidden" name="_method" value="DELETE">
-                                <input type="hidden" name="_token" value="">
-                                <button type="submit" class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="w-6 h-6 text-red-600 hover:text-red-800 cursor-pointer" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Fernando</td>
-                            <td>fernando@gmail.com</td>
-                            <td>Plan economico</td>
-                            <td class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200 ">
-
-                                <input type="hidden" name="_method" value="DELETE">
-                                <input type="hidden" name="_token" value="">
-                                <button type="submit" class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="w-6 h-6 text-red-600 hover:text-red-800 cursor-pointer" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+    @endif 
+    @isset($pedidos)
+        <script>
+            console.log({!! json_encode($pedidos) !!});
+        </script>
+    @endisset
+    <div class="flex flex-col py-12">
+        <div class="overflow-x-auto max-w-7xl">
+            <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                    <table class="min-w-full text-center">
+                        <thead class="border-b bg-gray-800">
+                            <tr>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Id
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Producto
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Destinatario
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Compras de Servicio
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Descripción
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Precio
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Opciones
+                                </th>
+                            </tr>
+                        </thead class="border-b">
+                        <tbody>
+                            <tr class="bg-white border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Plan Economico
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    kevinbrayan33o@gmail.com
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    1
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Se compro una Nota
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    $1200
+                                </td>
+                                <td class="py-4 px-6">
+                                    <a href="#"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Eliminar</a>
+                                    <a href="#"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                                </td>
+                            </tr class="bg-white border-b">
+                            <tr class="bg-white border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Plan Basico
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    kevinBaby@gmail.com
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    2
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Se compro una Nota,imagenes y Video
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    $1600
+                                </td>
+                                <td class="py-4 px-6">
+                                    <a href="#"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Eliminar</a>
+                                    <a href="#"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                                </td>
+                            </tr class="bg-white border-b">
+                            <tr class="bg-white border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Plan Premiun
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    kevinBaby@gmail.com
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    2
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Se compro una Nota y un Video
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    $1600
+                                </td>
+                                <td class="py-4 px-6">
+                                    <a href="#"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Eliminar</a>
+                                    <a href="#"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                                </td>
+                            </tr class="bg-white border-b">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
