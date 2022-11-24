@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 // use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiciosController;
@@ -85,7 +86,7 @@ Route::middleware([
     })->name('dashboard');
     Route::get('/admin', function () {
         return view('Admin.index');
-    })->name('Admin');
+    })->name('admin');
     Route::get('/crear', function () {
         return view('Admin.CrearAdmin');
     })->name('Crear');
@@ -118,7 +119,13 @@ Route::middleware([
     Route::get('/paypal/status/{id}', [PaymentController::class, 'payPalStatus']
     )->name('paypal.status');
 
+    Route::get('/qr', function () {
+        return view('QR.FormularioQR');
+    })->name('FormularioQR');
 
+    Route::get('/card', function () {
+        return view('QR.TarjetaQR');
+    })->name('TarjetaQR');
     
     //ruta de codigo QR
     Route::get('/qrcode', [QrCodeController::class, 'index']);

@@ -64,11 +64,17 @@
                                 </tr class="bg-white border-b">
                             @endforeach
                         </tbody>
+                        
                     </table>
+                    
                 </div>
+                
             </div>
+            
         </div>
+        
     </div>
+    
 @endsection
 @section('scripts')
     @if (Route::is('tablaPlanes'))

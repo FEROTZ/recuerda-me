@@ -14,10 +14,13 @@
                                 Nombre
                             </th>
                             <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-zinc-900 uppercase border-b border-gray-200 bg-gray-50">
-                                Correo
+                                descripcion
                             </th>
                             <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-zinc-900 uppercase border-b border-gray-200 bg-gray-50">
-                                Contraseña
+                                QR
+                            </th>
+                            <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-zinc-900 uppercase border-b border-gray-200 bg-gray-50">
+                                Imagen
                             </th>
                             <th class="px-6 py-3 text-sm text-left text-zinc-900 border-b border-gray-200 bg-gray-50"
                                 colspan="2">
