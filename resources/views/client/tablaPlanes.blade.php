@@ -31,19 +31,13 @@
                                     Id
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Producto
+                                    Nombre
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                     Destinatario
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Compras de Servicio
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Descripción
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Precio
+                                    Imagen
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                     Opciones
@@ -54,7 +48,7 @@
                             <tr class="bg-white border-b">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    Plan Economico
+                                    brayan 
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                     kevinbrayan33o@gmail.com
@@ -62,73 +56,44 @@
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                     1
                                 </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    Se compro una Nota
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    $1200
-                                </td>
                                 <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Eliminar</a>
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                                    <a href="{{'qrcode'}}"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Genera QR</a>
+                                    <a href="{{'qrcode'}}"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"></a>
                                 </td>
                             </tr class="bg-white border-b">
                             <tr class="bg-white border-b">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    Plan Basico
+                                    ricardo
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    kevinBaby@gmail.com
+                                    ricardogama234@gmail.com
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                     2
                                 </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    Se compro una Nota,imagenes y Video
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    $1600
-                                </td>
                                 <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Eliminar</a>
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                                    <a href="{{'qrcode'}}"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Generar QR</a>
+                                    <a href="{{'formularioQR'}}"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"></a>
                                 </td>
                             </tr class="bg-white border-b">
                             <tr class="bg-white border-b">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    Plan Premiun
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    kevinBaby@gmail.com
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    2
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    Se compro una Nota y un Video
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    $1600
-                                </td>
-                                <td class="py-4 px-6">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Eliminar</a>
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
-                                </td>
-                            </tr class="bg-white border-b">
                         </tbody>
+                        
                     </table>
+                    
                 </div>
+                
             </div>
+            
         </div>
+        
     </div>
+    
 @endsection
 @section('scripts')
     @if (Route::is('tablaPlanes'))
