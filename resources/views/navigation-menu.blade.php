@@ -213,4 +213,3 @@
         </div>
     </div>
 </nav>
-<script src="{{asset('resources/js/buscador.js')}}" type="module"></script>
